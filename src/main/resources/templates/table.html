@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <table class="table table-bordered  table-hover" >
+        <thead>
+        <tr>
+
+            <th scope="col">Дата</th>
+            <th scope="col">Платеж</th>
+            <th scope="col">Основной платеж</th>
+            <th scope="col">Проценты</th>
+            <th scope="col">Остаток кредита</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="payment : ${payments}">
+
+            <td th:text="${payment.getDate()}"></td>
+            <td th:text="${payment.getAnnuityPayment()}"></td>
+            <td th:text="${payment.getPaymentLoan()}"></td>
+            <td th:text="${payment.getPaymentRate()}"></td>
+            <td th:text="${payment.getBalanceLoan()}"></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
